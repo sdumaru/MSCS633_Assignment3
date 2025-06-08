@@ -9,7 +9,7 @@ A terminal-based chatbot implementation using Django's management commands and C
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/sdumaru/MSCS633_Assignment3.git
-   cd chatbot_project
+   cd .\MSCS633_Assignment3\chatbot_project
 
 2. **Prerequisites:** Before you begin, make sure you have **Python 3.8+** and **pip** installed. Then install language models and required packages:
 
