@@ -10,6 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+# References:
+# https://docs.chatterbot.us/django/#install-packages
+# https://docs.chatterbot.us/django/settings/
+# https://dev.to/documatic/build-a-chatbot-using-python-django-46hb
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,7 +42,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'chatbot_app',
 ]
+
+CHATTERBOT = {
+    'name': 'Terminal ChatBot',
+    'storage_adapter': 'chatterbot.storage.SQLStorageAdapter',
+    'logic_adapters': [
+        'chatterbot.logic.MathematicalEvaluation',
+        'chatterbot.logic.TimeLogicAdapter',
+        'chatterbot.logic.BestMatch'
+        ],
+    'database_uri': 'sqlite:///db.sqlite3',
+    'read_only': False,
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
